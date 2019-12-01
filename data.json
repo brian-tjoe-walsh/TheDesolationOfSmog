@@ -1,0 +1,59 @@
+// [
+//   {
+//     "artist": "Drake",
+//     "albums": "Scorpion",
+//     "Year": "2018",
+//     "Sales": "3905000" 
+//   },
+//   {
+//     "artist": "Post Malone",
+//     "albums": "Beerbongs & Bentleys",
+//     "Year": "2018",
+//     "Sales": "3251000"
+//   },
+//   {
+//     "artist": "Various Artists",
+//     "album": "The Greatest Showman: Original Soundtrack",
+//     "Year": "2018",
+//     "Sales": "2499000"
+//   },
+//   {
+//     "artist": "Cardi B",
+//     "album": "Invasion Of Privacy",
+//     "Year": "2018",
+//     "Sales": "2060000"
+//   },
+//   {
+//     "artist": "Travis Scott",
+//     "album": "Astroworld",
+//     "Year": "2018",
+//     "Sales": "1985000"
+//   },
+//   {
+//     "artist": "XXXTentacion",
+//     "album": "?",
+//     "Year": "2018",
+//     "Sales": "1637000"
+//   },
+//   {
+//     "artist": "Migos",
+//     "album": "Culture II",
+//     "Year": "2018",
+//     "Sales": "1599000"
+//   },{
+//     "artist": "Ed Sheeran",
+//     "album": "%",
+//     "Year": "2017",
+//     "Sales": "1481000"
+//   },{
+//     "artist": "Various Artists",
+//     "album": "Black Panther; The Album",
+//     "Year": "2018",
+//     "Sales": "1459000"
+//   },{
+//     "artist": "Post Malone",
+//     "album": "Stoney",
+//     "Year": "2016",
+//     "Sales": "1388000"
+//   }
+// ]
