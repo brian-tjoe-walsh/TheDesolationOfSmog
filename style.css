@@ -145,3 +145,6 @@ input[type=range]::-ms-fill-upper {
 input[type=range]:focus::-ms-fill-upper {
   background: #8db3d4;
 }
+
+html {
+}
