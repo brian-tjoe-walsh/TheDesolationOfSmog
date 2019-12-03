@@ -47,35 +47,32 @@ const colorScale = d3.scaleThreshold()
 .domain([500000, 1000000, 5000000, 250000000, 500000000, 1000000000])
 .range(d3.schemeBlues[7]);
 
+let map = svg;
 
-function ready() {
-  // debugger
-  
-  let mouseOver = function (d) {
-    d3.selectAll(".Country")
-    .transition()
-    .duration(200)
-    .style("opacity", 0.5);
-    d3.select(this)
-    .transition()
-    .duration(200)
-    .style("opacity", 1)
-    .style("stroke", "black");
-  };
-  
-  let mouseLeave = function (d) {
-    d3.selectAll(".Country")
-    .transition()
-    .duration(200)
-    .style("opacity", 0.8);
-    d3.select(this)
-    .transition()
-    .duration(200)
-    .style("stroke", "transparent");
-  };
-  
+let mouseOver = function (d) {
+  d3.selectAll(".Country")
+  .transition()
+  .duration(200)
+  .style("opacity", 0.5);
+  d3.select(this)
+  .transition()
+  .duration(200)
+  .style("opacity", 1);
+};
+
+let mouseLeave = function (d) {
+  d3.selectAll(".Country")
+  .transition()
+  .duration(200)
+  .style("opacity", 0.8);
+  d3.select(this)
+  .transition()
+  .duration(200);
+};
+
+function ready() {  
   // Draw the map
-  svg.append("g")
+  map = svg.append("g")
   .selectAll("path")
   .data(countries.features)
   .enter()
@@ -90,7 +87,7 @@ function ready() {
     d.total = years[year][d.id] || 0;
     return colorScale(d.total);
   })
-  .style("stroke", "transparent")
+  .style("stroke", "white")
   .attr("class", function (d) { return "Country" ;})
   .style("opacity", 0.8)
   .on("mouseover", mouseOver)
@@ -102,53 +99,10 @@ function ready() {
 const changeColor = () => {
   let year = document.getElementById("mySlider").value;
   
-  // debugger
-  
-  let mouseOver = function (d) {
-    d3.selectAll(".Country")
-      .transition()
-      .duration(200)
-      .style("opacity", 0.5);
-    d3.select(this)
-      .transition()
-      .duration(200)
-      .style("opacity", 1)
-      .style("stroke", "black");
-  };
-
-  let mouseLeave = function (d) {
-    d3.selectAll(".Country")
-      .transition()
-      .duration(200)
-      .style("opacity", 0.8);
-    d3.select(this)
-      .transition()
-      .duration(200)
-      .style("stroke", "transparent");
-  };
-  debugger
-
-  // Draw the map
-  svg.append("g")
-    .selectAll("path")
-    .data(countries.features)
-    .enter()
-    .append("path")
-    // draw each country
-    .attr("d", d3.geoPath()
-      .projection(projection)
-    )
-    // set the color of each country
-    .attr("fill", function (d) {
-      // debugger
-      d.total = years[year][d.id] || 0;
-      return colorScale(d.total);
-    })
-    .style("stroke", "transparent")
-    .attr("class", function (d) { return "Country"; })
-    .style("opacity", 0.8)
-    .on("mouseover", mouseOver)
-    .on("mouseleave", mouseLeave);
+  map._groups[0].forEach((country) => {
+    total = years[year][country.__data__.id] || 0;
+    country.setAttribute("fill", colorScale(total));
+  });
 };
 
 
@@ -158,17 +112,29 @@ document.getElementById("mySlider").addEventListener("change", (e) => {
 });
 
 
-const increment = () => {
-  let year = +document.getElementById("mySlider").value;
-  if (year < 2017) {
-    document.getElementById("mySlider").value = JSON.parse(year + 5);
-    changeColor();
-  } else {
-    debugger
-    location.reload();
-  }
+
+
+const timeLapse = () => {
+  let year = document.getElementById("mySlider").value;
+
+  map._groups[0].forEach((country) => {
+    total = years[year][country.__data__.id] || 0;
+    country.setAttribute("fill", colorScale(total));
+  });
 };
 
+let int;
+
+const increment = () => {
+  debugger
+  let year = +document.getElementById("mySlider").value;
+  if (year <= 2000) {
+    document.getElementById("mySlider").value = JSON.parse(year + 5);
+    timeLapse();
+  } else {
+    int = null;
+  }
+};
 
 
 
