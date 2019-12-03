@@ -31,12 +31,17 @@
         </div>
         <svg id="my_dataviz" width="1000" height="600"></svg>
         <div class="bottoms">
-          <input type="range" class="mySlider" id=mySlider min="1751" max="2017" value="2017">
+          <div>
+            <p id="year">Year: 2017</p>
+            <input type="range" class="mySlider" id=mySlider min="1751" max="2017" value="2017">
+          </div>
+          <svg id="my_scale" width="300" height="50"></svg>
           <input type="button" class="myButton" id=myButton value="Time Lapse"></input>
         </div>
       </div>
       
       <script src="basic_map.js" type='text/javascript'></script>
+      <script src="legend.js" type='text/javascript'></script>
     </body>
 
   </html>

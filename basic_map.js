@@ -1,5 +1,5 @@
 // The svg
-const svg = d3.select("svg"),
+const svg = d3.select("#my_dataviz"),
   width = +svg.attr("width"),
   height = +svg.attr("height");
 
@@ -46,6 +46,7 @@ Promise.all(promises).then((data) => {
 const colorScale = d3.scaleThreshold()
 .domain([500000, 1000000, 5000000, 250000000, 500000000, 1000000000])
 .range(d3.schemeBlues[7]);
+// .range(d3.schemeGreys[6]);
 
 let map = svg;
 
@@ -109,6 +110,7 @@ const changeColor = () => {
 document.getElementById("mySlider").addEventListener("change", (e) => {
   console.log(e.currentTarget.value);
   changeColor(e.currentTarget.value); 
+  document.getElementById("year").innerHTML = `Year: ${e.currentTarget.value}`;
 });
 
 
@@ -116,7 +118,7 @@ document.getElementById("mySlider").addEventListener("change", (e) => {
 
 const timeLapse = () => {
   let year = document.getElementById("mySlider").value;
-
+  document.getElementById("year").innerHTML = `Year: ${year}`;
   map._groups[0].forEach((country) => {
     total = years[year][country.__data__.id] || 0;
     country.setAttribute("fill", colorScale(total));
@@ -126,22 +128,40 @@ const timeLapse = () => {
 let int;
 
 const increment = () => {
-  debugger
+
   let year = +document.getElementById("mySlider").value;
-  if (year <= 2000) {
+  if (year < 2017) {
     document.getElementById("mySlider").value = JSON.parse(year + 5);
     timeLapse();
   } else {
+    document.getElementById("mySlider").value = JSON.parse(year + 5);
+    timeLapse();
+    window.clearInterval(int);
+    document.getElementById("myButton").value = "Time Lapse";
     int = null;
+    // debugger
   }
 };
 
 
 
 const playThrough = () => {   
-  document.getElementById("mySlider").value = 1751;
-  increment();
-  int = setInterval(increment, 200);
+  if (int) {
+    window.clearInterval(int);
+    int = null;
+    document.getElementById("myButton").value = "Time Lapse";
+  } else { 
+    if (document.getElementById("mySlider").value < 2016) {
+      increment();
+      document.getElementById("myButton").value = "Pause";
+      int = setInterval(increment, 200);
+    } else {
+      document.getElementById("mySlider").value = 1751;
+      increment();
+      document.getElementById("myButton").value = "Pause";
+      int = setInterval(increment, 200);
+    }
+  }
 };
 
 document.getElementById("myButton").addEventListener("click", (e) => {
