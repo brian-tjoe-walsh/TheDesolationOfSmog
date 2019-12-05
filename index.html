@@ -1,47 +1,52 @@
 <!doctype html>
-  <html>
+<html>
 
-    <head>
-      <meta charset="utf-8">
-      <meta name="description" content="">
-      <title>2.4 - Adding SVGs with D3</title>
-      <!-- Custom styling -->
-      <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <title>Desolation Of Smog</title>
+  <!-- Custom styling -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="d3-tip.css">
+</head>
 
-    <body>
-      <!-- <div class="container">
+<body>
+  <!-- <div class="container">
         <div class="row">
           <div id="chart-area"></div>
           <div id="chart-area2"></div>
         </div>
       </div> -->
 
-      <!-- External JS libraries -->
-      <!-- Custom JS -->
-      <!-- <script src="songCount.js"></script> -->
-      
-      <script src="https://d3js.org/d3.v5.js"></script>
-      <!-- <script src="http://d3js.org/d3.v4.js"></script> -->
-      <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-      <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-      <div class="full_container">
-        <div class="title_container">
-          <p class="title">The Desolation Of Smog</p>
-        </div>
-        <svg id="my_dataviz" width="1000" height="600"></svg>
-        <div class="bottoms">
-          <div>
-            <p id="year">Year: 2017</p>
-            <input type="range" class="mySlider" id=mySlider min="1751" max="2017" value="2017">
-          </div>
-          <svg id="my_scale" width="300" height="50"></svg>
-          <input type="button" class="myButton" id=myButton value="Time Lapse"></input>
-        </div>
-      </div>
-      
-      <script src="basic_map.js" type='text/javascript'></script>
-      <script src="legend.js" type='text/javascript'></script>
-    </body>
+  <!-- External JS libraries -->
+  <!-- Custom JS -->
+  <!-- <script src="songCount.js"></script> -->
 
-  </html>
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="./d3-tip.js"></script>
+  <!-- <script src="http://d3js.org/d3.v4.js"></script> -->
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+  <div class="full_container">
+    <div class="title_container">
+      <p class="title">The Desolation Of Smog</p>
+      <p class="sub">CO2 Emissions Per Year (Million Tons)</p>
+    </div>
+    <div class="splitInThree">
+      <div class="leftSide">
+        <p id="year">Year: 2017</p>
+        <input type="range" class="mySlider" id=mySlider min="1751" max="2017" value="2017">
+        <input type="button" class="myButton" id=myButton value="Time Lapse"></input>
+      </div>
+      <svg id="my_dataviz" width="1000" height="800"></svg>
+      <div class="rightSide">
+        <svg id="my_scale" width="80" height="300"></svg>
+      </div>
+    </div>
+  </div>
+
+  <script src="basic_map.js" type='text/javascript'></script>
+  <script src="legend.js" type='text/javascript'></script>
+</body>
+
+</html>

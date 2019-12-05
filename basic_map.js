@@ -6,7 +6,7 @@ const svg = d3.select("#my_dataviz"),
 // Map and projection
 const path = d3.geoPath();
 const projection = d3.geoMercator()
-  .scale(150)
+  .scale(165)
   .center([0, 20])
   .translate([width / 2, height / 2]);
   
@@ -14,6 +14,18 @@ const projection = d3.geoMercator()
 // returns a single element
 let year = document.getElementById("mySlider").value; 
 
+let countryName;
+let emissions;
+
+let tip = d3.tip().attr('class', 'd3-tip')
+  .html((d) => {
+    let text = `<strong>Country:</strong> <span style='color:white'> ${countryName}</span><br>`;
+    text += `<strong>Emissions:</strong> <span style='color:white'> ${emissions / 10} Million Tons</span><br>`;
+    // debugger
+    return text;
+  });
+
+svg.call(tip);
 
 const years = {};
 let countries = {};
@@ -44,13 +56,21 @@ Promise.all(promises).then((data) => {
     
     // Data and color scale
 const colorScale = d3.scaleThreshold()
-.domain([500000, 1000000, 5000000, 250000000, 500000000, 1000000000])
+  .domain([500000, 1000000, 5000000, 250000000, 500000000, 1000000000, 10000000000])
 .range(d3.schemeBlues[7]);
 // .range(d3.schemeGreys[6]);
+
+// 1000000000
+// 9838754028
 
 let map = svg;
 
 let mouseOver = function (d) {
+  countryName = d.properties.name;
+  // debugger
+  emissions = Math.floor(d.total / 100000);
+  
+
   d3.selectAll(".Country")
   .transition()
   .duration(200)
@@ -59,16 +79,24 @@ let mouseOver = function (d) {
   .transition()
   .duration(200)
   .style("opacity", 1);
+
+  tip.show();
 };
 
 let mouseLeave = function (d) {
+  countryName = null;
+  emissions = null;
+
   d3.selectAll(".Country")
   .transition()
   .duration(200)
   .style("opacity", 0.8);
   d3.select(this)
   .transition()
-  .duration(200);
+  .duration(200)
+  .style("opacity", 0.8);
+
+  tip.hide(d);
 };
 
 function ready() {  
