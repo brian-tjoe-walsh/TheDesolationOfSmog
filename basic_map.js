@@ -20,7 +20,7 @@ let emissions;
 let tip = d3.tip().attr('class', 'd3-tip')
   .html((d) => {
     let text = `<strong>Country:</strong> <span style='color:white'> ${countryName}</span><br>`;
-    text += `<strong>Emissions:</strong> <span style='color:white'> ${emissions / 10} Million Tons</span><br>`;
+    // text += `<strong>Emissions:</strong> <span style='color:white'> ${emissions / 10} Million Tons</span><br>`;
     // debugger
     return text;
   });
