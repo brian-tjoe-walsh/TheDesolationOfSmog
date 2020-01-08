@@ -195,3 +195,12 @@ const playThrough = () => {
 document.getElementById("myButton").addEventListener("click", (e) => {
   playThrough(e.currentTarget.value);
 });
+
+
+const openDirections = () => {
+  
+};
+
+document.getElementsByClassName("fas").addEventListener("click", (e) => {
+  openDirections();
+});

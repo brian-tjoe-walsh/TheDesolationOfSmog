@@ -209,3 +209,42 @@ input[type=range]:focus::-ms-fill-upper {
   align-items: center;
   justify-content: center; 
 }
+
+.lowerSub {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 200px;
+}
+
+.fa-question {
+  margin-top: 30px;
+  width: 100px;
+  height: 30px;
+  color: rgba(119, 176, 223, 0.63);
+  /* color: white; */
+  font-weight: bold;
+  font-size: 20px;
+  /* border-radius: 6px; */
+  border: none;
+  outline: none;
+}
+
+.main-page {
+  width: 1370x;
+  height: 750px;
+  /* background-color: red;
+  z-index: 100; */
+  /* opacity: .5; */
+}
+
+.modal {
+  position: fixed;
+  top: 5px;
+  left: 4px;
+  width: 1370x;
+  height: 750px;
+  background-color: red;
+  z-index: 100;
+  opacity: .5;
+}
