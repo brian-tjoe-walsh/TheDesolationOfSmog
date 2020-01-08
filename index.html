@@ -17,8 +17,6 @@
   <script src="./d3-tip.js"></script>
   <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
   <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-  <div class="modal">
-  </div>
   <div class="main-page">
       <div class="title_container">
         <p class="title">The Desolation Of Smog</p>
@@ -30,7 +28,9 @@
           <input type="range" class="mySlider" id=mySlider min="1751" max="2017" value="2017">
           <div class="lowerSub">
             <input type="button" class="myButton" id=myButton value="Time Lapse"></input>
-            <i class="fas fa-question"></i>
+            <div id="questionMark">
+              <i class="fas fa-question"></i>
+            </div>
           </div>
         </div>
         <svg id="my_dataviz" width="1000" height="800"></svg>
@@ -39,9 +39,15 @@
         </div>
       </div>
     </div>
-
-  <script src="basic_map.js" type='text/javascript'></script>
-  <script src="legend.js" type='text/javascript'></script>
+    <div class="modal" id="modal">
+      <div class="info-box">
+        <h3>CO2 Emissions Through The Years</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis sint est recusandae omnis nemo voluptatem architecto iusto excepturi, earum itaque aliquid asperiores veritatis, officia minus, vel fugiat dicta laboriosam. Exercitationem?</p>
+      </div>
+    </div>
+    
+    <script src="basic_map.js" type='text/javascript'></script>
+    <script src="legend.js" type='text/javascript'></script>
 </body>
 
 </html>

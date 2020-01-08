@@ -198,9 +198,22 @@ document.getElementById("myButton").addEventListener("click", (e) => {
 
 
 const openDirections = () => {
-  
+  debugger
+  let modal = document.getElementsByClassName("modal")[0];
+  if (modal.classList.contains("open")) {
+    modal.classList.remove("open");
+  } else {
+    modal.classList.add("open");
+  }
 };
 
-document.getElementsByClassName("fas").addEventListener("click", (e) => {
+document.getElementById("questionMark").addEventListener("click", (e) => {
+  debugger
+  openDirections();
+});
+
+debugger
+document.getElementById("modal").addEventListener("click", (e) => {
+  debugger
   openDirections();
 });

@@ -218,7 +218,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .fa-question {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   width: 100px;
   height: 30px;
   color: rgba(119, 176, 223, 0.63);
@@ -240,11 +240,56 @@ input[type=range]:focus::-ms-fill-upper {
 
 .modal {
   position: fixed;
-  top: 5px;
-  left: 4px;
-  width: 1370x;
-  height: 750px;
-  background-color: red;
-  z-index: 100;
-  opacity: .5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.863);
+  background-size: 100%;
+  z-index: 5;
+  visibility: hidden;
+  opacity: 0;
+  /* transition: visibility .75s, opacity .75s; */
+}
+
+.open {
+  visibility: visible;
+  opacity: 1;
+  background: rgba(226, 239, 255, 0.884);
+  /* transition:  */
+}
+
+#questionMark {
+  margin-top: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.info-box {
+  /* margin: 150px 200px 200px 400px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  width: 500px;
+  height: 500px;
+  padding: 30px;
+  border: 3px solid rgba(175, 175, 255, 0.795);
+}
+
+h3 {
+  font-family: 'Times New Roman', Times, serif;
+  color: rgba(128, 128, 128, 0.829);
+  font-size: 30px;
+  margin: 0 0 20px 0;
+}
+
+p {
+  font-family: 'Times New Roman', Times, serif;
+  color: rgba(56, 56, 56, 0.829);
+  font-size: 17px;
 }
