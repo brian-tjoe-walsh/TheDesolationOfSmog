@@ -197,9 +197,8 @@ document.getElementById("myButton").addEventListener("click", (e) => {
 });
 
 
-const openDirections = () => {
-  debugger
-  let modal = document.getElementsByClassName("modal")[0];
+const openInfo = (idx) => {
+  let modal = document.getElementsByClassName("modal")[idx];
   if (modal.classList.contains("open")) {
     modal.classList.remove("open");
   } else {
@@ -209,11 +208,21 @@ const openDirections = () => {
 
 document.getElementById("questionMark").addEventListener("click", (e) => {
   debugger
-  openDirections();
+  openInfo(1);
+});
+
+document.getElementById("smaug").addEventListener("click", (e) => {
+  debugger
+  openInfo(0);
 });
 
 debugger
-document.getElementById("modal").addEventListener("click", (e) => {
+document.getElementById("modal-one").addEventListener("click", (e) => {
   debugger
-  openDirections();
+  openInfo(0);
+});
+
+document.getElementById("modal-two").addEventListener("click", (e) => {
+  debugger
+  openInfo(1);
 });

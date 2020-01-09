@@ -230,6 +230,19 @@ input[type=range]:focus::-ms-fill-upper {
   outline: none;
 }
 
+.fa-smog {
+  /* margin-top: 30px; */
+  width: 100px;
+  height: 30px;
+  color: rgba(119, 176, 223, 0.63);
+  /* color: white; */
+  font-weight: bold;
+  font-size: 20px;
+  /* border-radius: 6px; */
+  border: none;
+  outline: none;
+}
+
 .main-page {
   width: 1370x;
   height: 750px;
@@ -264,9 +277,27 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 #questionMark {
-  margin-top: 30px;
+  margin: 30px 0 0 20px;
   height: 30px;
   width: 30px;
+}
+
+#smaug {
+  margin: 31px 0 0 10px;
+  height: 30px;
+  width: 30px;
+}
+
+.smog-box {
+  /* margin: 150px 200px 200px 400px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  width: 550px;
+  height: 550px;
+  padding: 30px;
+  border: 3px solid rgba(175, 175, 255, 0.795);
 }
 
 .info-box {
@@ -276,7 +307,7 @@ input[type=range]:focus::-ms-fill-upper {
   align-items: center;
   background: white;
   width: 550px;
-  height: 550px;
+  height: 450px;
   padding: 30px;
   border: 3px solid rgba(175, 175, 255, 0.795);
 }
