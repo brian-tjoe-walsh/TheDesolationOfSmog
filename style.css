@@ -17,6 +17,7 @@
 }
 
 .title_container {
+  /* position: absolute; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -245,7 +246,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .main-page {
   width: 1370x;
-  height: 750px;
+  height: 650px;
   /* background-color: red;
   z-index: 100; */
   /* opacity: .5; */
