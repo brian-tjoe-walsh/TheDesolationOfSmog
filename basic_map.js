@@ -198,10 +198,17 @@ document.getElementById("myButton").addEventListener("click", (e) => {
 
 
 const openInfo = (idx) => {
+  debugger
   let modal = document.getElementsByClassName("modal")[idx];
+  if (idx === 0 && modal.classList.contains("intro-close")) {
+    modal.classList.remove("intro-close");
+  }
   if (modal.classList.contains("open")) {
+    debugger
+    modal.classList.add("close");
     modal.classList.remove("open");
   } else {
+    modal.classList.remove("close");
     modal.classList.add("open");
   }
 };
@@ -216,7 +223,7 @@ document.getElementById("smaug").addEventListener("click", (e) => {
   openInfo(0);
 });
 
-debugger
+// debugger
 document.getElementById("modal-one").addEventListener("click", (e) => {
   debugger
   openInfo(0);

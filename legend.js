@@ -64,9 +64,9 @@ rects.enter()
       if (i === 0) {
         return `${(reversed[i] / 1000000)}+`;
       } else if (i === 6) {
-        return `${(reversed[i] / 1000000)} `;
+        return `${(reversed[i] / 1000000)} Million Tons`;
       } else {
-        return `${(reversed[i] / 1000000)} `;
+        return `${(reversed[i] / 1000000)}`;
       }
     })
   .attr("font-family", "sans-serif")

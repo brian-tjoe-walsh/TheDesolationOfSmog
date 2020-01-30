@@ -1,6 +1,11 @@
+body {
+  background-color: rgb(255, 254, 250);
+}
+
 #my_scale {
   /* background: black; */
   color: white;
+  width: 160px;
 }
 
 #my_dataviz {
@@ -25,17 +30,17 @@
 }
 
 .title {
-	font-family: 'Times New Roman', Times, serif;
+  font-family: 'Uncial Antiqua', cursive;
 	font-size: 30px;
 	font-weight: bolder;
 	margin-top: 10px;
 	margin-bottom: 0px;
-	color: rgb(160, 158, 158);
+	color:  rgb(122, 121, 121);
 }
 
 .sub {
-	font-family: 'Times New Roman', Times, serif;
-	font-size: 15px;
+  font-family: 'Cormorant Infant', serif;
+	font-size: 20px;
 	font-weight: bolder;
 	margin-top: 5px;
 	margin-bottom: 0px;
@@ -57,10 +62,11 @@
 	background: rgb(119, 176, 223);
 	color: white;
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 18px;
 	border-radius: 6px;
   border: none;
   outline: none;
+  font-family: 'Cormorant Infant', serif;
 }
 
 input[type=range] {
@@ -177,7 +183,7 @@ input[type=range]:focus::-ms-fill-upper {
 #year {
   margin: 5px;
   color: rgb(151, 148, 148);
-  font-family: sans-serif;
+  font-family: 'Cormorant Infant', serif;
   font-size: 10;
   /* font-weight: lighter; */
 }
@@ -247,8 +253,8 @@ input[type=range]:focus::-ms-fill-upper {
 .main-page {
   width: 1370x;
   height: 650px;
-  /* background-color: red;
-  z-index: 100; */
+  /* background-color: red; */
+  /* z-index: 100; */
   /* opacity: .5; */
 }
 
@@ -265,16 +271,45 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: rgba(255, 255, 255, 0.863);
   background-size: 100%;
   z-index: 5;
-  visibility: hidden;
-  opacity: 0;
+  /* visibility: hidden; */
+  /* opacity: 0; */
   /* transition: visibility .75s, opacity .75s; */
 }
 
 .open {
-  visibility: visible;
+  /* visibility: visible; */
   opacity: 1;
   background: rgba(226, 239, 255, 0.884);
   /* transition:  */
+  animation-name: fade-in;
+  animation-duration: 1000ms;
+}
+
+.close {
+  animation-name: fade-out;
+  animation-duration: 1s;
+  opacity: 0;
+  display: none;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    display: flex;
+    opacity: 1;
+    }
+  to {
+    opacity: 0;
+    display: none;
+  }
 }
 
 #questionMark {
@@ -314,21 +349,21 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 h2 {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Uncial Antiqua', cursive;
   color: rgba(128, 128, 128, 0.829);
-  font-size: 30px;
+  font-size: 25px;
   margin: 0 0 15px 0;
 }
 
 h3 {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Uncial Antiqua', cursive;
   color: rgba(128, 128, 128, 0.829);
-  font-size: 25px;
+  font-size: 20px;
   margin: 5px 0 15px 0;
 }
 
 p {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Cormorant Infant', serif;
   color: rgba(56, 56, 56, 0.829);
   font-size: 17px;
   margin: 5px;
@@ -337,4 +372,59 @@ p {
 ul {
   margin: 5px;
   color: rgba(56, 56, 56, 0.829);
+}
+
+li {
+  font-family: 'Cormorant Infant', serif;
+  color: rgba(56, 56, 56, 0.829);
+  font-size: 17px;
+  margin: 5px;
+}
+
+.fa-volume-up {
+  /* position: absolute;
+  top: 30px;
+  right: 30px; */
+  font-size: 30px;
+  color:  rgb(122, 121, 121);
+  cursor: pointer;
+}
+
+#volume {
+  cursor: pointer;
+}
+
+.svg-inline--fa {
+  cursor: pointer;
+}
+
+#none {
+  display: none;
+}
+
+.display-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.intro-close {
+  display: none;
+}
+
+.x-button {
+  display: flex;
+  flex-direction: row; 
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.fa-times {
+  position: absolute;
+  width: 100%;
+  top: 10px;
+  left: 10px;
+  color:  rgb(122, 121, 121);
+  font-size: 30px;
 }

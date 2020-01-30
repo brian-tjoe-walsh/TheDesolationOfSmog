@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="d3-tip.css">
   <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" data-auto-a11y="true"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant|Uncial+Antiqua&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,9 +20,18 @@
   <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
   <div class="main-page">
       <div class="title_container">
-        <p class="title">The Desolation Of Smog</p>
+        <div class="display-row">
+          <div class="volume">
+            <i class="fas fa-volume-up" id="none"></i>
+          </div>
+          <p class="title">The Desolation Of Smog</p>
+          <div class="volume">
+            <i class="fas fa-volume-up" id="volume"></i>
+          </div>
+        </div>
         <p class="sub">CO2 Emissions Per Year (Million Tons)</p>
       </div>
+      
       <div class="splitInThree">
         <div class="leftSide">
           <p id="year">Year: 2017</p>
@@ -42,8 +52,11 @@
         </div>
       </div>
     </div>
-    <div class="modal" id="modal-one">
+    <div class="modal intro-close" id="modal-one">
       <div class="smog-box">
+        <div class="x-button">
+          <i class="fas fa-times"></i>
+        </div>
         <h2>How Much Is A Metric Ton of CO2?</h2>
         <p>The problem with talking about CO2 emissions is that it's hard to visually quantify for the average person--what does 1 ton of C02 really mean, let alone 1 Million Tons?</p>
         <p>To put things into perspective, 1 Metric Ton of CO2 is the equivelant of 113 Gallons of gasoline! Or The equivelant amount of power to charging your smartphone 127,532 times!
@@ -62,6 +75,9 @@
     </div>
     <div class="modal open" id="modal-two">
       <div class="info-box">
+        <div class="x-button">
+          <i class="fas fa-times"></i>
+        </div>
         <h2>The Weight Of Our Emissions</h2>
         <p>The weight of emissions is generally perceived through abstract numbers, and generalities that describe the destruction of our planet. But what does any of it really mean, and is the impact the same between everyone?</p>
         <p>This data visualization allows the user to view the amount of CO2 emissions each country produces, from the year 1751 until 2017. Not only are you able to see the impact of each country on a global scale, this shows the overall progression of industrialization throughout the past two centuries.</p>
@@ -73,9 +89,12 @@
         </ul>
       </div>
     </div>
+
+    <audio loop src="lotr.mp3" volume="0.1" id="music" ></audio>
     
     <script src="basic_map.js" type='text/javascript'></script>
     <script src="legend.js" type='text/javascript'></script>
+    <script src="playMusic.js" type='text/javascript'></script>
 </body>
 
 </html>
