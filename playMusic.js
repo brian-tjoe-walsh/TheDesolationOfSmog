@@ -15,7 +15,9 @@ function addVolumeListener() {
     song = document.getElementById("music");
     if (song.paused) {
       song.play();
+      song.classList.remove("volume-color");
     } else {
+      song.classList.add("volume-color");
       song.pause();
     }
     // if (song.playing)

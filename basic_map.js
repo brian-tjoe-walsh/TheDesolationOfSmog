@@ -203,6 +203,14 @@ const openInfo = (idx) => {
   if (idx === 0 && modal.classList.contains("intro-close")) {
     modal.classList.remove("intro-close");
   }
+
+  if (idx === 1 && modal.classList.contains("CLICK")) {
+    modal.classList.remove("CLICK");
+    let music = document.getElementById("music");
+    if (music.paused) {
+      music.play();
+    }
+  } 
   if (modal.classList.contains("open")) {
     debugger
     modal.classList.add("close");

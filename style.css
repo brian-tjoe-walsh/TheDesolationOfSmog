@@ -27,6 +27,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: default;
 }
 
 .title {
@@ -66,6 +67,12 @@ body {
 	border-radius: 6px;
   border: none;
   outline: none;
+  font-family: 'Cormorant Infant', serif;
+  cursor: pointer;
+}
+
+text {
+  cursor: default;
   font-family: 'Cormorant Infant', serif;
 }
 
@@ -353,6 +360,7 @@ h2 {
   color: rgba(128, 128, 128, 0.829);
   font-size: 25px;
   margin: 0 0 15px 0;
+  cursor: default;
 }
 
 h3 {
@@ -360,6 +368,7 @@ h3 {
   color: rgba(128, 128, 128, 0.829);
   font-size: 20px;
   margin: 5px 0 15px 0;
+  cursor: default;
 }
 
 p {
@@ -367,11 +376,13 @@ p {
   color: rgba(56, 56, 56, 0.829);
   font-size: 17px;
   margin: 5px;
+  cursor: default;
 }
 
 ul {
   margin: 5px;
   color: rgba(56, 56, 56, 0.829);
+  cursor: default;
 }
 
 li {
@@ -427,4 +438,8 @@ li {
   left: 10px;
   color:  rgb(122, 121, 121);
   font-size: 30px;
+}
+
+.volume-color {
+  color:  rgb(190, 190, 190);
 }
