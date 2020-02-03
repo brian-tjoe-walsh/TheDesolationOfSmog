@@ -10,7 +10,6 @@ const reversed = [1000000000, 1000000000, 500000000, 250000000, 5000000, 1000000
   const rangeScale = d3.scaleThreshold()
     .domain([500000, 1000000, 5000000, 250000000, 500000000, 1000000000, 10000000000])
     .range(d3.schemeBlues[8]);
-    // debugger
 
 var rects = range.selectAll("rect")
   .data(ele);

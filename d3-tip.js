@@ -199,7 +199,6 @@
 
     function directionNorth() {
       var bbox = getScreenBBox()
-      // debugger
 
       if (bbox.n.y === 144.39666748046875 && bbox.n.x === 140.46942138671875) {
         return {

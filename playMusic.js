@@ -4,14 +4,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function addVolumeListener() {
-  debugger
   song = document.getElementById("music");
   song.volume = 0.5;
   // song.play();
   let volume = document.getElementById("volume");
   
   volume.addEventListener('click', function() {
-    debugger
     song = document.getElementById("music");
     if (song.paused) {
       song.volume = 0.5;

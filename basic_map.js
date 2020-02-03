@@ -21,7 +21,6 @@ let tip = d3.tip().attr('class', 'd3-tip')
   .html((d) => {
     let text = `<strong>Country:</strong> <span style='color:white'> ${countryName}</span><br>`;
     // text += `<strong>Emissions:</strong> <span style='color:white'> ${emissions / 10} Million Tons</span><br>`;
-    // debugger
     return text;
   });
 
@@ -36,7 +35,6 @@ const promises = [
   d3.csv("./annual-co2-emissions-per-country.csv",
     (d) => {
       if (!years[d.Year]) {
-        // debugger
         years[d.Year] = {};
         years[d.Year][d.Code] = +d["Annual CO₂ emissions (tonnes)"];
 
@@ -67,7 +65,6 @@ let map = svg;
 
 let mouseOver = function (d) {
   countryName = d.properties.name;
-  // debugger
   emissions = Math.floor(d.total / 100000);
   
 
@@ -112,7 +109,6 @@ function ready() {
   )
   // set the color of each country
   .attr("fill", function (d) {
-    // debugger
     d.total = years[year][d.id] || 0;
     return colorScale(d.total);
   })
@@ -136,7 +132,6 @@ const changeColor = () => {
 
 
 document.getElementById("mySlider").addEventListener("change", (e) => {
-  console.log(e.currentTarget.value);
   changeColor(e.currentTarget.value); 
   document.getElementById("year").innerHTML = `Year: ${e.currentTarget.value}`;
 });
@@ -167,7 +162,6 @@ const increment = () => {
     window.clearInterval(int);
     document.getElementById("myButton").value = "Time Lapse";
     int = null;
-    // debugger
   }
 };
 
@@ -198,7 +192,6 @@ document.getElementById("myButton").addEventListener("click", (e) => {
 
 
 const openInfo = (idx) => {
-  debugger
   let modal = document.getElementsByClassName("modal")[idx];
   if (idx === 0 && modal.classList.contains("intro-close")) {
     modal.classList.remove("intro-close");
@@ -212,8 +205,7 @@ const openInfo = (idx) => {
     }
   } 
   if (modal.classList.contains("open")) {
-    debugger
-    modal.classList.add("close");
+      modal.classList.add("close");
     modal.classList.remove("open");
   } else {
     modal.classList.remove("close");
@@ -222,22 +214,17 @@ const openInfo = (idx) => {
 };
 
 document.getElementById("questionMark").addEventListener("click", (e) => {
-  debugger
   openInfo(1);
 });
 
 document.getElementById("smaug").addEventListener("click", (e) => {
-  debugger
   openInfo(0);
 });
 
-// debugger
 document.getElementById("modal-one").addEventListener("click", (e) => {
-  debugger
   openInfo(0);
 });
 
 document.getElementById("modal-two").addEventListener("click", (e) => {
-  debugger
   openInfo(1);
 });
