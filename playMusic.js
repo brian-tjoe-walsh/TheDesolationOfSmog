@@ -7,7 +7,7 @@ function addVolumeListener() {
   debugger
   song = document.getElementById("music");
   song.volume = 0.5;
-  song.play();
+  // song.play();
   let volume = document.getElementById("volume");
   
   volume.addEventListener('click', function() {
