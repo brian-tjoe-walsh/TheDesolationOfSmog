@@ -14,6 +14,7 @@ function addVolumeListener() {
     debugger
     song = document.getElementById("music");
     if (song.paused) {
+      song.volume = 0.5;
       song.play();
       song.classList.remove("volume-color");
     } else {
